@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Lab3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Minecraft" translatesAutoresizingMaskIntoConstraints="NO" id="DuD-Xt-awD">
+                                <rect key="frame" x="149" y="82" width="251" height="251"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="251" id="UMz-Qc-hE7"/>
+                                    <constraint firstAttribute="height" constant="251" id="Xff-ri-qqP"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="kON-gh-EHt">
+                                <rect key="frame" x="476" y="120" width="318.5" height="175"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="minecraft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2J-2x-lEh">
+                                        <rect key="frame" x="72.5" y="0.0" width="174" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="174" id="b0g-Zc-zKs">
+                                                <variation key="heightClass=compact-widthClass=compact" constant="72.5"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="20.5" id="hQz-qS-HuP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="31B-yj-325">
+                                        <rect key="frame" x="81" y="50.5" width="157" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="KI6-V3-XUa"/>
+                                            <constraint firstAttribute="width" constant="157" id="siN-eq-Yyn"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Minecraft"/>
+                                            <segment title="Roblox"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ekm-UI-Q2N"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="eqV-tc-dDe">
+                                        <rect key="frame" x="0.0" y="111.5" width="318.5" height="63.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="gQq-PQ-oV4">
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="63.5"/>
+                                                <subviews>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17" minValue="5" maxValue="26" translatesAutoresizingMaskIntoConstraints="NO" id="n6H-nw-wt0">
+                                                        <rect key="frame" x="-2" y="0.0" width="174" height="33"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="eET-oK-iTE"/>
+                                                            <constraint firstAttribute="width" constant="170" id="mL1-ss-ip8">
+                                                                <variation key="heightClass=compact-widthClass=compact" constant="210"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <connections>
+                                                            <action selector="fontSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZeG-p0-IqC"/>
+                                                        </connections>
+                                                    </slider>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFi-NA-Olm">
+                                                        <rect key="frame" x="49" y="43" width="72.5" height="20.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20.5" id="5WA-xr-umb"/>
+                                                            <constraint firstAttribute="width" constant="72.5" id="Owd-l4-9hZ">
+                                                                <variation key="heightClass=compact-widthClass=compact" constant="70.5"/>
+                                                            </constraint>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="t7c-ju-vyd">
+                                                <rect key="frame" x="215" y="0.0" width="103.5" height="63.5"/>
+                                                <subviews>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MEF-1E-vnz">
+                                                        <rect key="frame" x="27.5" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="capitalSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="wLO-hM-Wf5"/>
+                                                        </connections>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capitalization" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVQ-ZU-893">
+                                                        <rect key="frame" x="0.0" y="43" width="103.5" height="20.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20.5" id="uov-bW-u68"/>
+                                                            <constraint firstAttribute="width" constant="103.5" id="wkR-Yh-nn4"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=compact-widthClass=regular" spacing="30"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kON-gh-EHt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FXH-P7-IS2">
+                                <variation key="heightClass=compact-widthClass=compact" constant="137.75"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="187.33333333333326"/>
+                            </constraint>
+                            <constraint firstItem="DuD-Xt-awD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G39-AP-p5l">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-173"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="-173.5"/>
+                            </constraint>
+                            <constraint firstItem="kON-gh-EHt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="64.5" id="IYl-eL-pMi">
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="0.5"/>
+                            </constraint>
+                            <constraint firstItem="DuD-Xt-awD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-162.5" id="Q7h-nQ-Rpg">
+                                <variation key="heightClass=compact-widthClass=compact" constant="0.0"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="0.5"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="DuD-Xt-awD"/>
+                                <exclude reference="kON-gh-EHt"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="DuD-Xt-awD"/>
+                                <include reference="kON-gh-EHt"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="DuD-Xt-awD"/>
+                                <include reference="kON-gh-EHt"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="DuD-Xt-awD"/>
+                                <include reference="kON-gh-EHt"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="capitalSwitchControl" destination="MEF-1E-vnz" id="feJ-rf-NYU"/>
+                        <outlet property="fontSliderControl" destination="n6H-nw-wt0" id="KEI-LE-Ekf"/>
+                        <outlet property="imageLabel" destination="P2J-2x-lEh" id="2hl-ZK-SSQ"/>
+                        <outlet property="imageView" destination="DuD-Xt-awD" id="hol-lT-R6n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.75" y="92.753623188405811"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Minecraft" width="2400" height="2637"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
