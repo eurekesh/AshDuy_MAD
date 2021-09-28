@@ -17,23 +17,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="1Fb-Va-duI">
-                                <rect key="frame" x="127" y="388.5" width="160" height="119"/>
+                                <rect key="frame" x="127" y="389" width="160.5" height="118.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Reaction Reimagined" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EER-8p-KvN">
-                                        <rect key="frame" x="35.5" y="0.0" width="89.5" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reaction Reimagined" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EER-8p-KvN">
+                                        <rect key="frame" x="0.0" y="0.0" width="160.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm4-AM-fdE">
-                                        <rect key="frame" x="65" y="60" width="30" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cm4-AM-fdE">
+                                        <rect key="frame" x="65" y="39.5" width="30" height="30"/>
                                         <state key="normal" title="Play"/>
                                         <connections>
                                             <action selector="playButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ddE-B9-B4C"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-XO-0jY">
-                                        <rect key="frame" x="38" y="109" width="84" height="10"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-XO-0jY">
+                                        <rect key="frame" x="38" y="88.5" width="84" height="30"/>
                                         <state key="normal" title="High Scores"/>
                                         <connections>
                                             <action selector="highScoreButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E9c-5s-Fes"/>
@@ -52,12 +52,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1Fb-Va-duI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="56e-Qx-zyt"/>
                             <constraint firstItem="DJM-vG-u4s" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="117" id="BEO-Wy-FY1"/>
                             <constraint firstItem="DJM-vG-u4s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="86" id="KgZ-no-cnH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Fb-Va-duI" secondAttribute="bottom" constant="354.5" id="SX2-iD-abC"/>
-                            <constraint firstItem="1Fb-Va-duI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="pAz-Tu-fZL"/>
-                            <constraint firstItem="1Fb-Va-duI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tc4-X9-wht"/>
+                            <constraint firstItem="1Fb-Va-duI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uAr-Ei-Nad"/>
+                            <constraint firstItem="1Fb-Va-duI" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yQH-0p-yMe"/>
                         </constraints>
                     </view>
                     <connections>

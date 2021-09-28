@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     var currentScore = 0
     var randButtonX: CGFloat?
     var randButtonY: CGFloat?
+    
+    //make sure new random labels don't bump into the timer!
     var timerLabelX: CGFloat?
     var timerLabelY: CGFloat?
     
@@ -25,11 +27,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var hitMeButton: UIButton!
-
-
-    
     @IBOutlet weak var highScoreButton: UIButton!
     
+    // ------ overrides ------
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        timerLabelX = titleLabel.center.x;
+        timerLabelY = titleLabel.center.y;
+    }
+    
+    override func viewDidLayoutSubviews() {
+        // override auto layout, make sure the buttons actually move!
+        if let overrideX = randButtonX {
+            hitMeButton.center.x = overrideX;
+        }
+        if let overrideY = randButtonY {
+            hitMeButton.center.y = overrideY;
+        }
+    }
+    
+    // ------ IBActions ------
     // button actions – make them do things
     @IBAction func playButtonAction(_ sender: UIButton) {
         // hide the buttons that aren't being used, and show first button
@@ -59,37 +77,39 @@ class ViewController: UIViewController {
         present(message, animated: true, completion: nil)
     }
     
-    func runGameIteration() -> Void {
+    // ------ Game logic ------
+    
+    private func runGameIteration() -> Void {
         currentTimeRemaining = currentTimerInterval;
         createTimer();
     }
     
-    func doGameOver() -> Void {
+    private func doGameOver() -> Void {
+        hitMeButton.isHidden = true;
         print("You got " + String(currentScore) + " score!");
         titleLabel.text = "You got " + String(currentScore) + " score!"
         playButton.setTitle("Play Again", for: .normal);
         playButton.isHidden = false;
         highScoreButton.isHidden = false;
-        hitMeButton.isHidden = true;
         currentTimerInterval = 5.00;
         calcHighScore()
         currentScore = 0;
     }
     
-    func calcHighScore() -> Void {
+    private func calcHighScore() -> Void {
         if currentScore > currentHighScore {
             currentHighScore = currentScore;
         }
     }
     
-    func createTimer() -> Void {
+    private func createTimer() -> Void {
         if(self.timerVar == nil){ // needed because timers are weird
             self.timerVar = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
         }
         
     }
     
-    @objc func updateTimerLabel() {
+    @objc private func updateTimerLabel() {
         if(self.currentTimeRemaining <= 0.01){
             self.timerVar?.invalidate();
             self.timerVar = nil;
@@ -102,14 +122,14 @@ class ViewController: UIViewController {
         }
     }
     
-    func buildTimerString() -> String {
+    private func buildTimerString() -> String {
         return String(format: "%.2f", currentTimeRemaining)
     }
     
     // we need a new button position, but we need to make sure that it's NOT overlapping with the timer! TODO: implement this fully, not needed for initial MVP
-    func newRandomXY(_ button: UIButton) -> (CGFloat, CGFloat){
+    private func newRandomXY(_ button: UIButton) -> (CGFloat, CGFloat){
         let xbounds = button.superview!.bounds.width - button.frame.width;
-        let ybounds = button.superview!.bounds.height - button.frame.height;
+        let ybounds = button.superview!.bounds.height - button.frame.height - 20;
         return generateRandomCandidate(xbound: xbounds, ybound: ybounds)
 //        while(true){
 //            var (xcandidate, ycandidate) = generateRandomCandidate(xbound: xbounds, ybound: ybounds);
@@ -117,24 +137,8 @@ class ViewController: UIViewController {
 //        }
     }
     
-    func generateRandomCandidate(xbound: CGFloat, ybound: CGFloat) -> (CGFloat, CGFloat){
+    private func generateRandomCandidate(xbound: CGFloat, ybound: CGFloat) -> (CGFloat, CGFloat){
         return (CGFloat(arc4random_uniform(UInt32(xbound))), CGFloat(arc4random_uniform(UInt32(ybound))))
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        timerLabelX = titleLabel.center.x;
-        timerLabelY = titleLabel.center.y;
-    }
-    
-    override func viewDidLayoutSubviews() {
-        if let overrideX = randButtonX {
-            hitMeButton.center.x = overrideX;
-        }
-        if let overrideY = randButtonY {
-            hitMeButton.center.y = overrideY;
-        }
     }
 
 
