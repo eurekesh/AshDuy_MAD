@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         timerLabelX = titleLabel.center.x;
         timerLabelY = titleLabel.center.y;
+        print("Title X " + timerLabelX!.description + " Title Y " + timerLabelY!.description)
     }
     
     override func viewDidLayoutSubviews() {
@@ -53,6 +54,7 @@ class ViewController: UIViewController {
         // hide the buttons that aren't being used, and show first button
         currentScore = 0;
         hitMeButton.isHidden = false
+        hitMeButton.isEnabled = true
         playButton.isHidden = true
         highScoreButton.isHidden = true
         runGameIteration()
@@ -86,6 +88,8 @@ class ViewController: UIViewController {
     
     private func doGameOver() -> Void {
         hitMeButton.isHidden = true;
+        hitMeButton.cancelTracking(with: nil);
+        print("Is tracking: " + String(hitMeButton.isTracking))
         print("You got " + String(currentScore) + " score!");
         titleLabel.text = "You got " + String(currentScore) + " score!"
         playButton.setTitle("Play Again", for: .normal);
@@ -129,7 +133,7 @@ class ViewController: UIViewController {
     // we need a new button position, but we need to make sure that it's NOT overlapping with the timer! TODO: implement this fully, not needed for initial MVP
     private func newRandomXY(_ button: UIButton) -> (CGFloat, CGFloat){
         let xbounds = button.superview!.bounds.width - button.frame.width;
-        let ybounds = button.superview!.bounds.height - button.frame.height - 20;
+        let ybounds = button.superview!.bounds.height - button.frame.height - 40; // don't go into bezel
         return generateRandomCandidate(xbound: xbounds, ybound: ybounds)
 //        while(true){
 //            var (xcandidate, ycandidate) = generateRandomCandidate(xbound: xbounds, ybound: ybounds);
