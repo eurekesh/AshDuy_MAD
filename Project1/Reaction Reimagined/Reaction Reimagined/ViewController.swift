@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
-    
+    let userDefaults = UserDefaults.standard
+    let userDefaultsKey = "highScores"
     // timer help graciously provided by (and modified from) https://stackoverflow.com/a/52459742
     var currentTimerInterval = 5.00
     var currentTimeRemaining = 0.00
@@ -35,6 +37,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         timerLabelX = titleLabel.center.x;
         timerLabelY = titleLabel.center.y;
+        currentHighScore = userDefaults.integer(forKey: userDefaultsKey)
+        print("Current high score is " + currentHighScore.description)
         print("Title X " + timerLabelX!.description + " Title Y " + timerLabelY!.description)
     }
     
@@ -103,11 +107,12 @@ class ViewController: UIViewController {
     private func calcHighScore() -> Void {
         if currentScore > currentHighScore {
             currentHighScore = currentScore;
+            userDefaults.set(currentHighScore, forKey: userDefaultsKey)
         }
     }
     
     private func createTimer() -> Void {
-        if(self.timerVar == nil){ // needed because timers are weird
+        if(self.timerVar == nil){ // needed because timers are weird, and are apparently not threadsafe
             self.timerVar = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
         }
         
@@ -130,10 +135,10 @@ class ViewController: UIViewController {
         return String(format: "%.2f", currentTimeRemaining)
     }
     
-    // we need a new button position, but we need to make sure that it's NOT overlapping with the timer! TODO: implement this fully, not needed for initial MVP
+    // randomness help graciously provided by https://stackoverflow.com/a/26075459
     private func newRandomXY(_ button: UIButton) -> (CGFloat, CGFloat){
         let xbounds = button.superview!.bounds.width - button.frame.width;
-        let ybounds = button.superview!.bounds.height - button.frame.height - 40; // don't go into bezel
+        let ybounds = (button.superview!.bounds.height - 30) - button.frame.height + 70; // don't go into bezel
         return generateRandomCandidate(xbound: xbounds, ybound: ybounds)
 //        while(true){
 //            var (xcandidate, ycandidate) = generateRandomCandidate(xbound: xbounds, ybound: ybounds);
