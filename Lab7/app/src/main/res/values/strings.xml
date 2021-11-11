@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">VoxelPickerPro</string>
+    <string name="enderDragonTextBox">Defeated Ender Dragon</string>
+    <string name="witherTextBox">Defeated the Wither</string>
+    <string name="alexRadio">Alex</string>
+    <string name="steveRadio">Steve</string>
+    <string name="hardcoreSwitch">Completed on Hardcore Mode</string>
+    <string name="spinnerHint">How do you see yourself?</string>
+    <string name="playerTitle">Make your epic Minecraft title!</string>
+    <string name="buttonLabel">Make Title!</string>
+</resources>
