@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerArrayValues">
+        <item>Pillager</item>
+        <item>Conqueror</item>
+        <item>Liberator</item>
+    </string-array>
+    <string-array name="ratingArrayValues">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+</resources>
