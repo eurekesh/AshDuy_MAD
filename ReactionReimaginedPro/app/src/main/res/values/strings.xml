@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ReactionReimaginedPro</string>
+    <string name="play_button">Play</string>
+    <string name="gameButton">Tap Me!</string>
+    <string name="play_again">Play Again!</string>
+    <string name="resetHighScore">Reset High Score</string>
+    <string name="instructionButton">How to Play</string>
+    <string name="instructions_title">Instructions</string>
+    <string name="instructions">Welcome to Reaction Reimagined! This is a fast-paced game with a ticking clock – every tap of the button will send it to a new location, try to tap as many times as you can before the time runs out!</string>
 </resources>
